@@ -8,9 +8,9 @@
 
 Download the Project Report <a href= 'https://soilad.github.io/res/ppl_report.pdf'> here </a>. 
 
----
 
-### What is Meta-Iterative Map Reduce?
+
+## What is Meta-Iterative Map Reduce?
 
 Let's explain this using a bottom-up approach:
 
@@ -21,7 +21,7 @@ Let's explain this using a bottom-up approach:
   - Now imagine, instead of diving the task into 1 level of sub-tasks, we continue to divide the sub-tasks further, into their own sub-_(sub)_-tasks that themselves follow a Map-reduce paradigm. 
 This would mean that each 'worker' that was originally computing a sub-task, is now itself delegating work to a secondary level of workers. Done iteratively, we termed this composite of Map-reduce operations as _**Meta Iterative MapReduce**_. 
 
-## Advantages
+## Advantages of Meta-Iterative MapReduce
 
 1. Effective speed-up of **`No. of Parallel MPI Processes ∗ No. of CUDA Kernel Threads`**
 
@@ -64,6 +64,7 @@ This would mean that each 'worker' that was originally computing a sub-task, is 
 
 
 ## Key terms:
+
   - **_CUDA-aware MPI_**: Accelerate MPI by leveraging GPU compute through CUDA. https://devblogs.nvidia.com/introduction-cuda-aware-mpi/
   - **_Iterative MapReduce_** : The Map-reduce paradigm was adapted for iterative operations, for example in Machine Learning model training. https://deeplearning4j.org/iterativereduce
   - **_Meta Iterative MapReduce_** : We (the authors) proposed a model that performs two "levels" of iterative map-reduce operations. The gist is that each map-operation in the first level of map-reduce is a composite of another level of map-reduce operation. < Efficiency bounds are better this way >
